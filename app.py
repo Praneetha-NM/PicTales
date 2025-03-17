@@ -58,9 +58,9 @@ def generate_text_from_image(image_path: str) -> str:
 # Generate a short story from the extracted text
 def generate_story_from_text(scenario: str) -> str:
     prompt_template = f"""
-    Write a short story based on the following scenario. The story should be engaging, concise, and imaginative, with a maximum of 50 words. Avoid any additional commentary or explanation.\n
-    SCENARIO: {scenario}\n
-    STORY:\n
+    Write a short story based on the following scenario. The story should be engaging, concise, and imaginative, with a maximum of 50 words. Avoid any additional commentary or explanation.
+    SCENARIO: {scenario}
+    STORY:
     """
     result = text_gen_pipeline(prompt_template, max_new_tokens=100, do_sample=True)
     return result[0]['generated_text'].strip()  # Remove any leading/trailing whitespace
